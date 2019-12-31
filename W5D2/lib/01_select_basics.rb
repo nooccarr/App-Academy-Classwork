@@ -23,11 +23,11 @@ end
 
 def select_population_of_germany
   execute(<<-SQL)
-    SELECT
-      population
-    FROM
-      countries
-    WHERE
+    SELECT 
+      population 
+    FROM 
+      countries 
+    WHERE 
       name = 'Germany'
   SQL
 end
@@ -37,11 +37,10 @@ def per_capita_gdp
   # the area is over 5,000,000 km^2
   execute(<<-SQL)
     SELECT 
-      name, gdp / population
-    FROM
-      countries
-    WHERE
-      area > 5000000;
+      name, (gdp / population) AS per_capita 
+    FROM 
+      countries 
+    WHERE area > 5000000
   SQL
 end
 
@@ -49,12 +48,12 @@ def small_and_wealthy
   # Show the name and continent of countries where the area is less than 2,000
   # and the gdp is more than 5,000,000,000.
   execute(<<-SQL)
-    SELECT
-      name, continent
-    FROM
-      countries
-    WHERE
-      area < 2000 AND gdp > 5000000000;
+  SELECT 
+    name, continent 
+  FROM 
+    countries 
+  WHERE 
+    area < 2000 AND gdp > 5000000000
   SQL
 end
 
@@ -62,24 +61,23 @@ def scandinavia
   # Show the name and the population for 'Denmark', 'Finland', 'Norway', and
   # 'Sweden'
   execute(<<-SQL)
-    SELECT
-      name, population
-    FROM
-      countries
-    WHERE
-      name IN ('Denmark', 'Finland', 'Norway', 'Sweden');
+  SELECT 
+    name, population 
+  FROM 
+    countries 
+  WHERE 
+    name IN ('Denmark', 'Finland', 'Norway', 'Sweden')
   SQL
 end
 
 def starts_with_g
   # Show each country that begins with the letter G
   execute(<<-SQL)
-    SELECT
-      name
-    FROM
-      countries
-    WHERE
-      name LIKE 'G%';
+    SELECT 
+      name 
+    FROM 
+      countries 
+    WHERE name LIKE 'G%'
   SQL
 end
 
@@ -89,10 +87,10 @@ def just_the_right_size
   # BETWEEN allows range checking - note that it is inclusive.
   execute(<<-SQL)
     SELECT 
-      name, area / 1000
+      name, (area / 1000) AS square_kilometers 
     FROM 
-      countries
-    WHERE
-      area BETWEEN 200000 AND 250000;
+      countries 
+    WHERE 
+      area BETWEEN 200000 AND 250000
   SQL
 end
