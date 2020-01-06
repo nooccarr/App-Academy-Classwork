@@ -1,0 +1,32 @@
+<h1> <%= @cat.name %> </h1>
+<a href=<%= edit_cat_url(@cat.id)%>>
+    <img src="https://www.rd.com/wp-content/uploads/2019/11/cat-10-e1573844975155-768x519.jpg" style="height:250px">
+</a>
+<table>
+    <thead>
+        <tr> 
+            <th> Attribute </th>
+            <th> Value </th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr> 
+            <td> Age </td>
+            <td> About <%= @cat.age %> years </td>
+        </tr>
+        <tr> 
+            <td> Birth Date </td>
+            <td> <%= @cat.birth_date %> </td>
+        </tr>
+        <tr> 
+            <td> Color </td>
+            <td> <%= @cat.color %> </td>
+        </tr>
+        <tr> 
+            <td> Sex </td>
+            <td> <%= @cat.sex %> </td>
+        </tr>
+    </tbody>
+
+
+</table>
