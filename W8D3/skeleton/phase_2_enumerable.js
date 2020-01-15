@@ -52,7 +52,7 @@ Array.prototype.myMap = function (callback) {
 
 Array.prototype.myReduce = function(outter_callback, acc){
     arr = this;
-    if(ActiveXObject === undefined){
+    if(acc === undefined){
         acc = this[0];
         arr = this.slice(1, this.length);
     }
