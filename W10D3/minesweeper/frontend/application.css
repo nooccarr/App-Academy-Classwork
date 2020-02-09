@@ -1,0 +1,28 @@
+h1 {
+  font-size: 50px;
+  display: flex;
+  left: 350px;
+  top: 80px;
+  /* margin: auto; */
+}
+
+.board {
+  display: flex;
+  margin: auto;
+  position: absolute;
+  left: 300px;
+  top: 100px;
+  border: 1px solid white;
+  border-style: inset;
+}
+
+div[class^="tile"] {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: lightgray;
+  border: 1px solid white;
+  border-style: outset;
+  text-align: center;
+  text-justify: auto;
+}
